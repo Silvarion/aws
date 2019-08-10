@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+              "kms:Decrypt",
+              "kms:ListKeyPolicies",
+              "kms:Encrypt",
+              "kms:GetKeyRotationStatus",
+              "kms:ListRetirableGrants",
+              "kms:GetKeyPolicy",
+              "kms:ReEncryptTo",
+              "kms:DescribeKey",
+              "kms:ListResourceTags",
+              "kms:ReEncryptFrom",
+              "kms:ListGrants"
+          ],
+          "Resource": "arn:aws:kms:*:*:key/*"
+      },
+      {
+          "Sid": "VisualEditor1",
+          "Effect": "Allow",
+          "Action": [
+              "kms:ListKeys",
+              "kms:ListAliases"
+          ],
+          "Resource": "*"
+      }
+  ]
+}

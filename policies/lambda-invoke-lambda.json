@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+              "lambda:GetEventSourceMapping",
+              "lambda:GetLayerVersion",
+              "lambda:InvokeFunction",
+              "lambda:ListTags",
+              "lambda:ListVersionsByFunction",
+              "lambda:GetFunction",
+              "lambda:ListAliases",
+              "lambda:GetFunctionConfiguration",
+              "lambda:InvokeAsync",
+              "lambda:GetAlias",
+              "lambda:GetLayerVersionPolicy",
+              "lambda:GetPolicy"
+          ],
+          "Resource": "arn:aws:lambda:*:*:function:*"
+      },
+      {
+          "Sid": "VisualEditor1",
+          "Effect": "Allow",
+          "Action": [
+              "lambda:ListFunctions",
+              "lambda:ListEventSourceMappings",
+              "lambda:ListLayerVersions",
+              "lambda:ListLayers",
+              "lambda:GetAccountSettings"
+          ],
+          "Resource": "*"
+      }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+              "ses:SendEmail",
+              "ses:SendRawEmail"
+          ],
+          "Resource": "arn:aws:ses:*:*:identity/*"
+      },
+      {
+          "Sid": "VisualEditor1",
+          "Effect": "Allow",
+          "Action": [
+              "ses:ListTemplates",
+              "ses:ListCustomVerificationEmailTemplates",
+              "ses:VerifyEmailIdentity",
+              "ses:GetIdentityPolicies",
+              "ses:DescribeConfigurationSet",
+              "ses:GetSendQuota",
+              "ses:ListReceiptFilters",
+              "ses:GetIdentityMailFromDomainAttributes",
+              "ses:VerifyDomainDkim",
+              "ses:VerifyDomainIdentity",
+              "ses:ListConfigurationSets",
+              "ses:GetIdentityDkimAttributes",
+              "ses:DescribeReceiptRuleSet",
+              "ses:ListReceiptRuleSets",
+              "ses:GetTemplate",
+              "ses:ListIdentities",
+              "ses:VerifyEmailAddress",
+              "ses:GetCustomVerificationEmailTemplate",
+              "ses:GetSendStatistics",
+              "ses:GetIdentityVerificationAttributes",
+              "ses:GetIdentityNotificationAttributes",
+              "ses:ListIdentityPolicies",
+              "ses:DescribeReceiptRule",
+              "ses:DescribeActiveReceiptRuleSet",
+              "ses:GetAccountSendingEnabled",
+              "ses:ListVerifiedEmailAddresses"
+          ],
+          "Resource": "*"
+      }
+  ]
+}
