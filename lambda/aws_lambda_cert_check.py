@@ -40,10 +40,10 @@ def send_email(certs_dict):
   email_body = get_html(certs_dict)
   ses_payload = {
     'ses': {
-      'Source': 'UplayPCInfrastructureTeam@ubisoft.com',
+      'Source': 'alerts@yourdomain.com',
       'Destination': {
         'ToAddresses': [
-          'UplayPCInfrastructureTeam@ubisoft.com',
+          'alerts@yourdomain.com',
         ]
       },
       'Message': {
@@ -59,12 +59,12 @@ def send_email(certs_dict):
         }
       },
       'ReplyToAddresses': [
-        'UplayPCInfrastructureTeam@ubisoft.com',
+        'alerts@yourdomain.com',
       ],
       'Tags': [
         {
-          'Name': 'owner',
-          'Value': 'upc'
+          'Name': 'someKey',
+          'Value': 'someValue'
         },
       ],
     }
@@ -107,9 +107,9 @@ def send_slack_notification(certs_dict):
     attachments.append(to_attach)
   slack_payload = {
     'slack': {
-      'channel': 'infrastructure',
+      'channel': 'your-target-channel-name',
       'text': 'Expiring certificates found in AWS ACM',
-      'username': 'AWS Global',
+      'username': 'AWS Alerts',
       'icon_emoji': ':warning:',
       'attachments': attachments
     }
@@ -126,7 +126,7 @@ def lambda_handler(event, context):
       full_payload['slack'] = send_slack_notification(expiring_certs)
       lambda_client = boto3.client('lambda')
       lambda_client.invoke(
-        FunctionName = 'upcSendAlert',
+        FunctionName = 'lambda-send-alert',
         InvocationType = 'Event',
         LogType = 'None',
         Payload = bytes(json.dumps(full_payload),'utf-8')
