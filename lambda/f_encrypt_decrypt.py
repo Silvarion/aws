@@ -5,7 +5,7 @@ import base64
 def encrypt(string):
   kms = boto3.client('kms')
   response = kms.encrypt(
-      KeyId='<SOME KMS KEY ARN>',
+      KeyId='<KMS_KEY_ARN>',
       Plaintext=bytes(string, 'utf-8')
   )
   binary_encrypted = response[u'CiphertextBlob']

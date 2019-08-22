@@ -1,0 +1,56 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+              "logs:GetLogEvents",
+              "logs:PutLogEvents"
+          ],
+          "Resource": "arn:aws:logs:*:*:log-group:*:*:*"
+      },
+      {
+          "Sid": "VisualEditor1",
+          "Effect": "Allow",
+          "Action": [
+              "logs:ListTagsLogGroup",
+              "logs:DescribeLogGroups",
+              "logs:UntagLogGroup",
+              "logs:DescribeLogStreams",
+              "logs:DescribeSubscriptionFilters",
+              "logs:StartQuery",
+              "logs:DescribeMetricFilters",
+              "logs:PutLogEvents",
+              "logs:CreateLogStream",
+              "logs:TagLogGroup",
+              "logs:GetLogEvents",
+              "logs:FilterLogEvents",
+              "logs:GetLogGroupFields"
+          ],
+          "Resource": "arn:aws:logs:*:*:log-group:*"
+      },
+      {
+          "Sid": "VisualEditor2",
+          "Effect": "Allow",
+          "Action": [
+              "logs:DescribeQueries",
+              "logs:GetLogRecord",
+              "logs:PutDestinationPolicy",
+              "logs:StopQuery",
+              "logs:TestMetricFilter",
+              "logs:CreateLogGroup",
+              "logs:GetLogDelivery",
+              "logs:ListLogDeliveries",
+              "logs:CreateLogDelivery",
+              "logs:DescribeExportTasks",
+              "logs:GetQueryResults",
+              "logs:UpdateLogDelivery",
+              "logs:DescribeResourcePolicies",
+              "logs:PutDestination",
+              "logs:DescribeDestinations"
+          ],
+          "Resource": "*"
+      }
+  ]
+}
