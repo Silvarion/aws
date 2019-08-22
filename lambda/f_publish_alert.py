@@ -38,7 +38,7 @@ def lambda_handler(event, context):
   # Create Lambda Client
   req_json = {
     "action": "decrypt",
-    "message": ARNS[event['default']]
+    "message": SNS_ARNS[event['default']]
   }
   # Decrypt target SNS Topic
   client = boto3.client('lambda')

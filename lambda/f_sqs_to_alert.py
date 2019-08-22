@@ -3,7 +3,6 @@ import json
 
 def lambda_handler(event, context):
   print(event)
-  response_json = {}
   for record in event['Records']:
     msg_json = json.loads(json.loads(record['body'])['Message'])
     lambda_client = boto3.client('lambda')
@@ -17,7 +16,7 @@ def lambda_handler(event, context):
       Payload = bytes(json.dumps(msg_json),'utf-8')
     )
     sqs = boto3.client('sqs')
-    split_arn = record['eventSourceARN'].split(':');
+    split_arn = record['eventSourceARN'].split(':')
     queue_url = sqs.get_queue_url(
       QueueName = split_arn[len(split_arn) - 1],
       QueueOwnerAWSAccountId = split_arn[len(split_arn) - 2]
